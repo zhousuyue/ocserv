@@ -12,7 +12,7 @@ function input_user() {
     echo "You did not enter your password, please re-execute the program"
     else
     user_add
-    cert_add
+    #cert_add
     fi
 
 }
