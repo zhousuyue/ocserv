@@ -161,7 +161,6 @@ iptables -t nat -A POSTROUTING -s 10.12.0.0/24 -o eth0 -j MASQUERADE
 iptables -I FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 EOF
 echo "Anyconnect服务器安装完成，服务准备重启，重启后即可正常使用"
-reboot
 }
 function centos_install(){
 sys_clean
