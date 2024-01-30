@@ -127,12 +127,12 @@ cp crl.pem /etc/ocserv/
 #配置 ocserv
 cd /etc/ocserv/
 rm -rf ocserv.conf
-wget --no-check-certificate https://raw.githubusercontent.com/chendong12/ocserv/master/ocserv.conf
+wget --no-check-certificate https://raw.githubusercontent.com/zhousuyue/ocserv/master/ocserv.conf
 #
 cd /root/anyconnect
-wget --no-check-certificate https://raw.githubusercontent.com/chendong12/ocserv/master/gen-client-cert.sh
-wget --no-check-certificate https://raw.githubusercontent.com/chendong12/ocserv/master/user_add.sh
-wget --no-check-certificate https://raw.githubusercontent.com/chendong12/ocserv/master/user_del.sh
+wget --no-check-certificate https://raw.githubusercontent.com/zhousuyue/ocserv/master/gen-client-cert.sh
+wget --no-check-certificate https://raw.githubusercontent.com/zhousuyue/ocserv/master/user_add.sh
+wget --no-check-certificate https://raw.githubusercontent.com/zhousuyue/ocserv/master/user_del.sh
 chmod +x gen-client-cert.sh
 chmod +x user_add.sh
 chmod +x user_del.sh
@@ -152,8 +152,8 @@ iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 iptables -A INPUT -p icmp -j ACCEPT
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 iptables -I INPUT -p tcp --dport 80 -j ACCEPT
-iptables -A INPUT -p tcp --dport 4433 -j ACCEPT
-iptables -A INPUT -p udp --dport 4433 -j ACCEPT
+iptables -A INPUT -p tcp --dport 9466 -j ACCEPT
+iptables -A INPUT -p udp --dport 9466 -j ACCEPT
 iptables -A INPUT -j DROP
 iptables -t nat -F
 iptables -t nat -A POSTROUTING -s 10.12.0.0/24 -o eth0 -j MASQUERADE
